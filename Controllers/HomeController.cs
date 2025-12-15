@@ -13,11 +13,19 @@ namespace Porumb_Denisa_Lab1.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public string Index()
         {
-            return View();
+            return "buna";
+        }
+        public string metoda()
+        {
+            return "salut";
         }
 
+        public string Exercitiu( string nume, int varsta)
+        {
+            return "numele este" + nume + "si varsta este" + varsta;
+        }
         public IActionResult Privacy()
         {
             return View();
