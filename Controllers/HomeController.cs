@@ -6,6 +6,7 @@ namespace Porumb_Denisa_Lab1.Controllers
 {
     public class HomeController : Controller
     {
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
@@ -16,11 +17,13 @@ namespace Porumb_Denisa_Lab1.Controllers
         public string Index()
         {
             return "buna";
+
         }
         public string metoda()
         {
             return "salut";
         }
+      
 
         public string Exercitiu( string nume, int varsta)
         {
@@ -37,4 +40,15 @@ namespace Porumb_Denisa_Lab1.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+
+    public class StudentController : Controller
+    { public IActionResult Info()
+        {
+            var student = new Student { Name = "Ana", Age = 21 };
+            ViewBag.Message = "Mesaj din Controller";
+            ViewData["Time"] = DateTime.Now;
+            return View(student);
+        }
+    }
+
 }
